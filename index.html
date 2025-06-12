@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Meu Amor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #ffc0cb;
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    #timer {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Oi meu amor, feliz dia dos namorados, como eu sempre fou cartas resolvi inovar,
+    bem sobre hoje, no caso ontem ja que hoje é 12 (eu acho) peço desculpas, deveria
+    ter tentado conversar, e oce disse que eu nunca desabafei com você, peço desculpas
+    por isso tbm, prometo falar mais, e sobre oce ter perguntado se eu queria desistir,
+    TU CRIA VERGONHA NA CARA SIO, até parece que eu vou desistir de oce, o amor da minha
+    vida, EU TE AMO RABUDA
+  </h1>
+
+  <img src="foto.jpg" alt="Foto do casal" />
+
+  <div id="timer">Carregando tempo juntos...</div>
+
+  <button onclick="document.getElementById('audio').play()">Tocar música 🎵</button>
+  <audio id="audio" src="congratulations.mp3" preload="auto"></audio>
+
+  <script>
+    const startDate = new Date("2024-08-21T17:12:00");
+    const timer = document.getElementById("timer");
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      timer.innerText = `Estamos juntos há ${days} dias, ${hours}h ${minutes}min ${seconds}s 💖`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>
